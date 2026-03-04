@@ -1,4 +1,4 @@
-package com.antonett.decisionfatigue;
+package com.antonette.decisionfatigue;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
