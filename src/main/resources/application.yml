@@ -7,3 +7,5 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
+tmdb:
+  apiKey: ba37ac7bbfcc296f6b5db28cfef6fe87
