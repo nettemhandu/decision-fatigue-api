@@ -1,5 +1,7 @@
 package com.antonette.decisionfatigue.service;
 
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -20,8 +22,25 @@ public class MovieService {
                 + apiKey +
                 "&sort_by=popularity.desc";
 
-        String response = restTemplate.getForObject(url,String.class);
 
-        return response;
+        try {
+            String response = restTemplate.getForObject(url,String.class);
+
+            // parse JSON
+            ObjectMapper mapper = new ObjectMapper();
+            JsonNode root = mapper.readTree(response);
+
+            // Pick 1st movie from result
+            JsonNode firstMovie = root.path("results").get(0);
+
+            String title = firstMovie.path("title").asText();
+            String overview = firstMovie.path("overview").asText();
+
+            return "We recommend : " + title + " - " + overview;
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+            return "Sorry, couldn't get a recommendation right now.";
+        }
     }
 }
