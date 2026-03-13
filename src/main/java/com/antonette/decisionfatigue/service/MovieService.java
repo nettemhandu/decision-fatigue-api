@@ -7,11 +7,13 @@ import org.springframework.web.client.RestTemplate;
 @Service
 public class MovieService {
 
+    // read from application.yml
     @Value("${tmdb.apiKey}")
     private String apiKey;
 
     public String getMovie(String mood, int time) {
 
+        // request data from other servers
         RestTemplate restTemplate = new RestTemplate();
 
         String url = "http://api.themoviedb.org/3/discover/movie?api_key="
