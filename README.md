@@ -6,7 +6,7 @@ Instead of endlessly scrolling through movies or books, this API returns a singl
 
 Tech Stack :
 
-- Java 17
+- Java 
 - Spring Boot
 - PostgreSQL (Docker)
 - JPA / Hibernate

@@ -25,9 +25,7 @@ public class MovieController {
     }
 
     @GetMapping("/recommend")
-    public String recommendMovie(
-            @RequestParam(name="mood") String mood,
-            @RequestParam(name="time") int time) {
-        return movieService.getMovie(mood,time);
+    public String recommendMovie(@RequestParam(name="mood") String mood) {
+        return movieService.getMovie(mood);
     }
 }
