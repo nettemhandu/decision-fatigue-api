@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import java.security.cert.CertPathBuilderResult;
+import java.util.Map;
 import java.util.Random;
 
 @Service
@@ -17,34 +18,37 @@ public class MovieService {
     private String apiKey;
 
     public String getMovie(String mood) {
+        Map<String, Integer> moodGenres = Map.of(
+                "happy", 35,
+                "sad", 18,
+                "excited", 28,
+                "scared", 27,
+                "adventurous", 12
+        );
 
-        // request data from other servers
+        Integer genreId = moodGenres.getOrDefault(mood.toLowerCase(), 35);
+
         RestTemplate restTemplate = new RestTemplate();
-        String url = "http://api.themoviedb.org/3/discover/movie?api_key="
-                + apiKey +
-                "&sort_by=popularity.desc";
+        String url = "https://api.themoviedb.org/3/discover/movie?api_key="
+                + apiKey
+                + "&sort_by=popularity.desc&with_genres=" + genreId;
 
         try {
-            String response = restTemplate.getForObject(url,String.class);
+            String response = restTemplate.getForObject(url, String.class);
 
-            // parse JSON
             ObjectMapper mapper = new ObjectMapper();
             JsonNode root = mapper.readTree(response);
 
-            // Pick random movie
             JsonNode results = root.path("results");
-
             Random random = new Random();
             int randomIndex = random.nextInt(results.size());
 
             JsonNode movie = results.get(randomIndex);
-
             String title = movie.path("title").asText();
             String overview = movie.path("overview").asText();
 
             return "🎬 Recommendation: " + title + "\n" + overview;
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
             return "Sorry, couldn't get a recommendation right now.";
         }

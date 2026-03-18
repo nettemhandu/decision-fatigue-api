@@ -9,7 +9,6 @@ import  org.springframework.web.bind.annotation.*;
 public class MovieController {
 
     // debugging
-    @RestController
     public class TestController {
         @GetMapping("/hello")
         public String hello() {
@@ -28,4 +27,6 @@ public class MovieController {
     public String recommendMovie(@RequestParam(name="mood") String mood) {
         return movieService.getMovie(mood);
     }
+
+    
 }
