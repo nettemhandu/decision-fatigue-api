@@ -8,7 +8,7 @@ import  org.springframework.web.bind.annotation.*;
 @RestController
 public class MovieController {
 
-    // debugging
+    // debugging and testing
     public class TestController {
         @GetMapping("/hello")
         public String hello() {
@@ -23,10 +23,10 @@ public class MovieController {
         this.movieService = movieService;
     }
 
+    // User provides a genre like "action" or "comedy"
     @GetMapping("/recommend")
-    public String recommendMovie(@RequestParam(name="mood") String mood) {
-        return movieService.getMovie(mood);
+    public String recommendMovie(@RequestParam(name = "genre") String genre) {
+        return movieService.getMovie(genre);
     }
 
-    
 }
