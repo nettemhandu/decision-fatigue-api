@@ -2,6 +2,9 @@ package com.antonette.decisionfatigue.model;
 
 import jakarta.persistence.*;
 
+// database on hold bec i might not need it
+// I prefer getting unlimited info from TMDB database
+
 @Entity
 @Table(name = "movies")
 public class Movie {
