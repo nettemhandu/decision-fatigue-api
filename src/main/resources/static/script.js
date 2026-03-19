@@ -1,6 +1,18 @@
+const apiBaseUrl = "http://localhost:8080/movies/recommendation?genre=";
+
 document.getElementById("getMovie").addEventListener("click", async () => {
     const genre = document.getElementById("genre").value;
-    const response = await fetch(`http://localhost:8080/movies/recommendation?genre=${genre}`);
+    if (!genre) return alert("Please enter a genre!");
+
+    // Fetch movie from backend
+    const response = await fetch(`${apiBaseUrl}${genre}`);
     const text = await response.text();
-    document.getElementById("recommendation").innerText = text;
+
+    // Backend returns title|overview|posterPath (adjust backend to return poster URL)
+    const [title, overview, posterPath] = text.split("|");
+
+    document.getElementById("movieTitle").innerText = title;
+    document.getElementById("movieOverview").innerText = overview;
+    document.getElementById("poster").src = posterPath;
+    document.getElementById("recommendationCard").classList.remove("hidden");
 });

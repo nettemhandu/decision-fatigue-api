@@ -1,22 +1,65 @@
 body {
-    font-family: Arial, sans-serif;
-    background: #f0f2f5;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to bottom, #f0f2f5, #e6e9f0);
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    margin: 0;
 }
 
 .container {
-    background: white;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     text-align: center;
-    width: 350px;
+    background: white;
+    padding: 30px 40px;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    width: 380px;
 }
 
-#recommendation {
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.logo span.title {
+    color: #ff4081;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+}
+
+.input-section input {
+    padding: 8px 10px;
+    width: 200px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.input-section button {
+    padding: 8px 12px;
+    margin-left: 10px;
+    border-radius: 8px;
+    border: none;
+    background-color: #ff4081;
+    color: white;
+    cursor: pointer;
+}
+
+.input-section button:hover {
+    background-color: #e73370;
+}
+
+.card {
     margin-top: 20px;
-    font-size: 16px;
+    text-align: center;
+}
+
+.card img {
+    width: 200px;
+    border-radius: 12px;
+    margin-bottom: 10px;
+}
+
+.hidden {
+    display: none;
 }
