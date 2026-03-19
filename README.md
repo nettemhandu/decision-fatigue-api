@@ -8,7 +8,7 @@ Tech Stack :
 
 - Java 
 - Spring Boot
-- PostgreSQL (Docker)
+- PostgreSQL (Docker) - might not need database for now
 - JPA / Hibernate
 - WebClient (for external API integrations – coming soon)
 - Swagger (API documentation)
