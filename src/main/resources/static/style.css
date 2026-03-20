@@ -1,6 +1,6 @@
 body {
-    font-family: 'Arial', sans-serif;
-    background: linear-gradient(to bottom, #f0f2f5, #e6e9f0);
+    font-family: 'Arial', DM Sans;
+    background: linear-gradient(to bottom, #33285C, #FCABF6);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -25,7 +25,7 @@ body {
 
 .logo span.title {
     color: #ff4081;
-    font-family: 'Comic Sans MS', cursive, sans-serif;
+    font-family: DM Sans;
 }
 
 .input-section input {
