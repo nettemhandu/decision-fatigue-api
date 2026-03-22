@@ -12,7 +12,7 @@ const loading = document.getElementById("loading");
 const newMovieBtn = document.getElementById("newMovieBtn");
 const backgroundPosters = document.getElementById("backgroundPosters");
 
-// REAL WORKING MOVIE POSTER URLs
+// MOVIE POSTER URLs
 const realMoviePosters = [
     "https://image.tmdb.org/t/p/original/arw2vcBveWOVZr6pxd9XTd1TdQa.jpg", // Fight Club
     "https://image.tmdb.org/t/p/original/7IiTTgloJzvGI1TAYymCfbfl3vT.jpg", // The Dark Knight
@@ -83,7 +83,7 @@ function displayMovie(title, overview, posterPath) {
     recommendationCard.classList.remove('hidden');
 }
 
-// Main function to get recommendation from your backend
+// Main function to get recommendation from backend
 async function getRecommendation() {
     const genre = genreInput.value.trim();
 
