@@ -2,27 +2,50 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Decision Fatigue DF</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decision Fatigue - Movie Recommendations</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<!-- Background movie posters container -->
+<div class="background-posters" id="backgroundPosters">
+    <!-- Posters will be dynamically added here -->
+</div>
+
+<!-- Overlay to make text readable -->
+<div class="overlay"></div>
+
+<!-- Main content -->
 <div class="container">
     <!-- Cute logo -->
     <div class="logo">
-        <span>🎬</span> <span class="title">Decision Fatigue</span>
+        <span>🎬</span>
+        <span class="title">Decision Fatigue</span>
+        <span class="tagline">Stop scrolling, start watching</span>
     </div>
 
     <!-- Genre input -->
     <div class="input-section">
-        <input type="text" id="genre" placeholder="Enter genre (e.g. Sci-Fi)">
-        <button id="getMovie">Get Recommendation</button>
+        <input type="text" id="genre" placeholder="Enter a genre (e.g., Action, Comedy, Sci-Fi)">
+        <button id="getMovie">Get Recommendation 🎲</button>
+    </div>
+
+    <!-- Loading state -->
+    <div id="loading" class="loading hidden">
+        <div class="spinner"></div>
+        <p>Finding your perfect movie...</p>
     </div>
 
     <!-- Recommendation card -->
     <div id="recommendationCard" class="card hidden">
-        <img id="poster" src="" alt="Movie Poster">
-        <h2 id="movieTitle"></h2>
-        <p id="movieOverview"></p>
+        <div class="card-content">
+            <img id="poster" src="" alt="Movie Poster">
+            <div class="movie-info">
+                <h2 id="movieTitle"></h2>
+                <p id="movieOverview"></p>
+                <button class="new-movie-btn" id="newMovieBtn">Get Another Movie 🔄</button>
+            </div>
+        </div>
     </div>
 </div>
 
