@@ -1,5 +1,5 @@
-// My backend API endpoint
-const apiBaseUrl = "http://localhost:8080/recommend?genre=";
+// My backend API endpoint - Using relative path (works on web AND mobile!)
+const apiBaseUrl = "/recommend?genre=";
 
 // DOM Elements
 const getMovieBtn = document.getElementById("getMovie");
@@ -152,7 +152,7 @@ async function getRecommendation() {
 
         let errorMessage = error.message;
         if (error.message.includes('Failed to fetch')) {
-            errorMessage = 'Cannot connect to backend server.\n\nMake sure your Spring Boot server is running on http://localhost:8080\n\nCheck: \n1. Server is running\n2. Port 8080 is correct\n3. CORS is configured';
+            errorMessage = `Cannot connect to backend server.\n\nMake sure your app is deployed correctly.\n\nTry genres like: Action, Comedy, Drama, Sci-Fi, Horror, Romance`;
         }
 
         alert(`❌ ${errorMessage}\n\n💡 Try genres like: Action, Comedy, Drama, Sci-Fi, Horror, Romance`);
@@ -167,8 +167,9 @@ async function getRecommendation() {
 // Function to test backend connection
 async function testBackendConnection() {
     console.log('🔌 Testing backend connection...');
+
     try {
-        const response = await fetch('http://localhost:8080/hello');
+        const response = await fetch('/hello');
         if (response.ok) {
             const data = await response.text();
             console.log('✅ Backend is reachable! Response:', data);
@@ -179,7 +180,7 @@ async function testBackendConnection() {
             return false;
         }
     } catch (error) {
-        console.log('❌ Cannot reach backend. Make sure Spring Boot is running on http://localhost:8080');
+        console.log('❌ Cannot reach backend.');
         console.log('Error:', error.message);
         return false;
     }
@@ -229,4 +230,4 @@ const observer = new MutationObserver((mutations) => {
 observer.observe(recommendationCard, { attributes: true });
 
 console.log('🎬 Decision Fatigue - Ready!');
-console.log('📡 Backend URL:', apiBaseUrl);
+console.log('📡 Backend API URL:', apiBaseUrl);
