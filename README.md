@@ -52,3 +52,33 @@ Try these genres:
 - Java 17 or higher
 - Maven 3.6+
 - TMDB API Key (get one at [themoviedb.org](https://www.themoviedb.org/signup))
+
+📚 What I Learned
+This project was a deep dive into backend development:
+
+Spring Boot Fundamentals: Controllers, services, dependency injection
+
+REST API Design: Creating clean, intuitive endpoints
+
+External API Integration: Working with TMDB API, handling responses
+
+Error Handling: Graceful degradation when APIs fail
+
+Docker Containerization: Creating efficient multi-stage Docker builds
+
+CORS Configuration: Making APIs accessible from different origins
+
+Environment Management: Using environment variables for sensitive data
+
+Deployment Pipelines: CI/CD with Render
+
+
+🙏 Acknowledgments
+The Movie Database (TMDB) - For providing an amazing free API
+
+Netflix - For the UI inspiration and "Surprise Me" feature concept
+
+Spring Boot Team - For creating such an accessible framework
+
+Render - For simple, hassle-free deployment
+
