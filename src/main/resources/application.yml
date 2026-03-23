@@ -1,11 +1,9 @@
 spring:
-  datasource:
-    url: jdbc:postgresql://localhost:5432/decisionfatigue
-    username: postgres
-    password: postgres
-  jpa:
-    hibernate:
-      ddl-auto: update
-    show-sql: true
+  application:
+    name: decisionfatigue
+
+server:
+  port: ${PORT:8080}
+
 tmdb:
-  apiKey: ba37ac7bbfcc296f6b5db28cfef6fe87
+  apiKey: ${TMDB_API_KEY:ba37ac7bbfcc296f6b5db28cfef6fe87}
