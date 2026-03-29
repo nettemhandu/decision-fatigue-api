@@ -2,7 +2,7 @@
 
 A Spring Boot application that helps you beat decision fatigue by recommending random movies based on your favorite genres. Inspired by Netflix's "Surprise Me" feature, this project was built to strengthen backend development skills after working primarily in frontend and quality assurance.
 
-## 🎯 Project Origin
+## Project Origin
 
 As someone who's spent most of my career in **frontend development** and **quality assurance**, I wanted to challenge myself by diving deep into backend development. This project represents my journey into:
 - Building RESTful APIs with Spring Boot
