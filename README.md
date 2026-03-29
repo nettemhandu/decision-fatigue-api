@@ -47,7 +47,7 @@ Try these genres:
 - Action | Comedy | Drama | Horror | Romance
 - Sci-Fi | Thriller | Animation | Fantasy
 
-## 📋 Prerequisites
+## Prerequisites
 
 - Java 17 or higher
 - Maven 3.6+
